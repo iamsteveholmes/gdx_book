@@ -7,6 +7,7 @@ buildscript {
     dependencies {
         classpath 'de.richsource.gradle.plugins:gwt-gradle-plugin:0.6'
         classpath 'com.android.tools.build:gradle:1.0.0'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:0.11.+'
     }
 }
 
@@ -33,7 +34,12 @@ allprojects {
 
 project(":desktop") {
     apply plugin: "java"
+    apply plugin: "kotlin"
 
+    sourceSets {
+        main.kotlin.srcDirs += 'src/main/myKotlin'
+        main.java.srcDirs += 'src/main/myJava'
+    }
 
     dependencies {
         compile project(":core")
