@@ -7,7 +7,7 @@ buildscript {
     dependencies {
         classpath 'de.richsource.gradle.plugins:gwt-gradle-plugin:0.6'
         classpath 'com.android.tools.build:gradle:1.0.0'
-        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:0.11.+'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:0.11.91.4'
     }
 }
 
@@ -29,6 +29,7 @@ allprojects {
         mavenCentral()
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
         maven { url "https://oss.sonatype.org/content/repositories/releases/" }
+        maven { url "http://repository.jetbrains.com/all" }
     }
 }
 
@@ -47,6 +48,7 @@ project(":desktop") {
         compile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
         compile "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-desktop"
         compile "com.badlogicgames.gdx:gdx-tools:$gdxVersion"
+        testCompile "org.jetbrains.spek:spek:0.1-SNAPSHOT"
     }
 }
 
